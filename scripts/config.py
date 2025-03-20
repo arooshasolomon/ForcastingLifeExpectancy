@@ -19,7 +19,7 @@ RAW_FILES = {
 MERGED_DATA_FILE = os.path.join(DATA_DIR, "merged_data.csv")
 
 # ARIMA model parameters (see arima_tuning.ipynb)
-ARIMA_ORDER = (3, 2, 2)
+ARIMA_ORDER = (3, 2, 3)
 
 # prophet configuration
 PROPHET_REGRESSORS = ["Daily calorie supply", "GDP per capita", "Health expenditure as percentage of GDP"]
