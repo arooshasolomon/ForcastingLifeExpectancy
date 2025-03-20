@@ -6,14 +6,12 @@ class arima_model():
         pass
 
     def fit():
-        #fit on training data
+        # fit on training data
         pass
     
     def predict():
-        #predict on testing data 
+        # predict on testing data 
         pass
-
-
 
 
 def main():
@@ -22,3 +20,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    

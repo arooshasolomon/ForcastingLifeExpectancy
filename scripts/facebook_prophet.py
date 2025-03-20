@@ -28,15 +28,25 @@ for reg in PROPHET_REGRESSORS:
 
     # store results
     results = forecast[["ds", "yhat"]].merge(test_df[["ds", "y"]], on="ds")
+    results["Diff"] = results["yhat"] - results["y"]
     predictions[reg] = results
+    
+    # save results to CSV
+    results.to_csv(os.path.join(OUTPUT_DIR, f"prophet_results_{reg}.csv"), index=False)
+    
     mae = mean_absolute_error(results["y"], results["yhat"])
     print(f"MAE ({reg}): {mae:.2f}")
 
     # plot
-    plt.plot(results["ds"], results["y"], label="Actual")
-    plt.plot(results["ds"], results["yhat"], linestyle="dashed", label=f"Predicted ({reg})")
+    plt.figure(figsize=(12, 6))
+    plt.plot(test_df["ds"], test_df["y"], label="Actual", marker="o", linestyle="-")
 
+    for reg, pred in predictions.items():
+        plt.plot(pred["ds"], pred["yhat"], marker="o", linestyle="--", label=f"Predicted ({reg})")
+
+plt.xlabel("Year")
+plt.ylabel("Life Expectancy")
 plt.legend()
-plt.title("Facebook Prophet - Life Expectancy Prediction")
+plt.title("Facebook Prophet - Life Expectancy Prediction vs Actual")
 plt.savefig(os.path.join(OUTPUT_DIR, "prophet_predictions.png"))
 plt.show()
