@@ -59,7 +59,7 @@ def preprocess_data():
     os.makedirs(DATA_DIR, exist_ok=True)
     merged_df.to_csv(OUTPUT_FILE, index=False)
 
-    print("Processed data saved to data folder.")
+    print("Processed data saved to the 'data' folder.")
 
 
 def main():

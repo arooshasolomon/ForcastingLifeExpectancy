@@ -68,7 +68,7 @@ def save_results(test, forecast):
         'Difference': forecast.values - test.loc[test['Year'].isin(forecast.index), "Life Expectancy"].values
     })
     results_table.to_csv(os.path.join(OUTPUT_DIR, "arima_predictions.csv"), index=False)
-    print("Predictions saved to outputs/arima_predictions.csv")
+    print("ARIMA predictions saved to outputs/arima_predictions.csv")
 
 
 def main():
@@ -80,7 +80,7 @@ def main():
     forecast = generate_forecast(best_model_fit, test['Year'].values)
     
     mae = evaluate_model(test['Life Expectancy'].iloc[:len(forecast)], forecast)
-    print(f"Mean Absolute Error (MAE): {mae:.4f}")
+    print(f"ARIMA Mean Absolute Error (MAE): {mae:.4f}")
         
     save_results(test, forecast)
     plot_results(train, test, forecast)

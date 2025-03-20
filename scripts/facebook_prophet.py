@@ -41,7 +41,7 @@ def train_and_evaluate_model(train_df, test_df):
         results.to_csv(os.path.join(OUTPUT_DIR, f"prophet_results_{reg}.csv"), index=False)
         
         mae = mean_absolute_error(results["y"], results["yhat"])
-        print(f"MAE ({reg}): {mae:.2f}")
+        print(f"Facebook Prophet MAE ({reg}): {mae:.2f}")
 
     return predictions, test_df
 
