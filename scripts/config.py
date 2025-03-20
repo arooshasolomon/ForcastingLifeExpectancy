@@ -23,9 +23,3 @@ ARIMA_ORDER = (3, 2, 3)
 
 # prophet configuration
 PROPHET_REGRESSORS = ["Daily calorie supply", "GDP per capita", "Health expenditure as percentage of GDP"]
-
-# train/test split (for facebook prophet models)
-TRAIN_START_YEAR = 2000
-TRAIN_END_YEAR = 2016
-TEST_START_YEAR = 2017
-TEST_END_YEAR = 2021
