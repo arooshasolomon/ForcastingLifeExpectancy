@@ -58,7 +58,7 @@ def plot_results(predictions, test_df):
     plt.legend()
     plt.title("Facebook Prophet - Life Expectancy Prediction vs Actual")
     plt.savefig(os.path.join(OUTPUT_DIR, "prophet_predictions.png"))
-    plt.show()
+    plt.close()
 
 
 def main():
