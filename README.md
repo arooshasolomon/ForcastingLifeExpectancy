@@ -24,6 +24,7 @@ life_expectancy_forecasting/
 │   │   ├── EDA.ipynb  
 │   │   ├── arima_tuning.ipynb  
 │   │   ├── facebook_prophet.ipynb  
+│   │   ├── data_appendix_scripts.ipynb
 │  
 │── requirements.txt  
 │── README.md  
