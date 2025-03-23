@@ -11,6 +11,7 @@ def pull_data():
     df = pd.read_csv(RAW_FILES["life_expectancy"])
     df = df[df['Code'] == 'USA'].reset_index(drop=True)
     df = df.iloc[2:].reset_index(drop=True)  # drop first two rows (1880, 1890)
+    df = df[:-2].reset_index(drop=True) # drop last two rows (2022, 2023)
     df.rename(columns={"Period life expectancy at birth - Sex: total - Age: 0": "Life Expectancy"}, inplace=True)
     df.drop(columns=["Entity", "Code"], inplace=True)
     return df
@@ -73,8 +74,8 @@ def save_results(test, forecast):
 
 def main():
     df = pull_data()
-    train = df[df['Year'] <= 1999]
-    test = df[df['Year'] >= 2000]
+    train = df[df['Year'] <= 2015]
+    test = df[df['Year'] >= 2016]
     
     best_model_fit = train_arima(train)
     forecast = generate_forecast(best_model_fit, test['Year'].values)
