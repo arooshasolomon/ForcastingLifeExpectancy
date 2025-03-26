@@ -13,7 +13,6 @@ life_expectancy_forecasting/
 │   ├── healthcare_spending.csv [[3]](#3)  
 │   ├── calories_supply.csv [[4]](#4)  
 │   ├── merged_data.csv  
-│  
 │── scripts/  
 │   ├── arima.py  
 │   ├── config.py  
@@ -24,8 +23,7 @@ life_expectancy_forecasting/
 │   │   ├── EDA.ipynb  
 │   │   ├── arima_tuning.ipynb  
 │   │   ├── facebook_prophet.ipynb  
-│   │   ├── data_appendix_scripts.ipynb
-│  
+│   │   ├── data_appendix_scripts.ipynb  
 │── requirements.txt  
 │── README.md  
 │── LICENSE  
