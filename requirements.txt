@@ -30,7 +30,7 @@ holidays==0.69
 idna==3.6
 importlib_resources==6.5.2
 ipykernel==6.29.4
-ipython==8.23.0
+ipython==8.18.1
 jedi==0.19.1
 Jinja2==3.1.4
 joblib==1.4.2
